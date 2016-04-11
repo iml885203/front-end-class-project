@@ -16,6 +16,7 @@ p{
   font-weight: 200;
 }
 .header{
+  padding: 0em 3em;
   background-color: @element-bgcolor;
   display: flex;
   justify-content: space-between;
@@ -23,7 +24,7 @@ p{
   .logo{
     display: inline-block;
     height: 3em;
-    margin: 0.5em 3em;
+    margin: 0.5em 0em;
     img{
       height: 100%;
 
@@ -32,7 +33,6 @@ p{
   .menu{
     display: inline-block;
     ul{
-      margin-right: 3em;
       li{
         //display: inline-block;
         list-style-type: none;
@@ -137,5 +137,38 @@ p{
         margin-bottom: 1em;
       }
     }
+  }
+}
+.footer{
+  padding: 1em 3em;
+  background-color: @main-color;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;;
+  flex-wrap: wrap;
+  a{
+    color: inherit;
+  }
+
+  .logo{
+    height: 5em;
+    img{
+      height: 100%;
+    }
+  }
+  .partners, .about, .contact{
+    text-align: center;
+    width: 25%;
+    margin: 1em;
+    a{
+      text-decoration: none;
+    }
+    h2{
+      border-bottom: white 1px solid;
+    }
+  }
+  .copyright{
+    padding-top: 2em;
   }
 }
