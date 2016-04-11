@@ -62,21 +62,22 @@ p{
     }
     .solgan{
       position: absolute;
-      text-align: center;
-      width: 100%;
-      top: 50%;
+      width: 30%;
+      height: 30%;
+      top: 0;
+      right: 0;
+      bottom: 0;
       left: 0;
+      margin:auto;
+      background-color: @element-bgcolor;
+      color: @main-color;
+      font-size: 1em;
+      font-weight: 800;
+      letter-spacing: 5px;
       display: flex;
       justify-content: center;
-      div{
-        background-color: @element-bgcolor;
-        color: @main-color;
-        font-size: 1em;
-        padding: 2em 3em;
-        font-weight: 800;
-        letter-spacing: 5px;
-        width: auto;
-      }
+      align-items: center;
+      flex-direction: column;
     }
   }
   .advantage, .recent{

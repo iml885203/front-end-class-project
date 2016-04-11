@@ -18,15 +18,29 @@ $(function() {
     var url = window.location.protocol + '//' + window.location.hostname + window.location.pathname;
 
     function switchPage(i) {
+      var fadein = function(){
+        $(this).fadeIn(500,function(){
+          /*這邊寫換頁動畫*/
+          var oao = $('.oao');
+          oao.animate({fontSize : '3em'}, 1000);
+          oao.animate({fontSize : '1em'}, 1000);
+        });
+      };
         switch (i) {
             case '1':
-                $('.content').load('layout/home.html');
+                $('.content').fadeOut(500,function(){
+                  $(this).load('layout/home.html',fadein);
+                });
                 break;
             case '5':
-                $('.content').load('layout/aspect.html');
+                $('.content').fadeOut(500,function(){
+                  $(this).load('layout/aspect.html',fadein);
+                });
                 break;
             case '6':
-                $('.content').load('layout/aboutus.html');
+                $('.content').fadeOut(500,function(){
+                  $(this).load('layout/aboutus.html',fadein);
+                });
                 break;
         }
         $('.menu ul li').removeClass('active');
@@ -36,7 +50,7 @@ $(function() {
     if (!!index) {
         switchPage(index);
     } else {
-        $('.content').load('layout/home.html');
+        $('.content').load('layout/home.html').hide(0).fadeIn(1000);
         $('.menu ul li:nth-child(1)').addClass('active');
     }
 
