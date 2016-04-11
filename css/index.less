@@ -1,6 +1,6 @@
 @main-color:#fd8b8c;
 @bg-color:#ececec;
-@element-bgcolor:rgba(136, 136, 136, 0.3);
+@element-bgcolor:rgba(255, 255, 255, 0.7);
 
 *{
   box-sizing: border-box;
@@ -8,6 +8,12 @@
 }
 body{
   background-color: @bg-color
+}
+p, h3{
+  line-height: 1.8em;
+}
+p{
+  font-weight: 200;
 }
 .header{
   background-color: @element-bgcolor;
@@ -42,6 +48,93 @@ body{
         &:hover{
           .active;
         }
+      }
+    }
+  }
+}
+.content{
+  /*home*/
+  .surface{
+    width: 100%;
+    position: relative;
+    img{
+      width: 100%;
+    }
+    .solgan{
+      position: absolute;
+      text-align: center;
+      width: 100%;
+      top: 50%;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      div{
+        background-color: @element-bgcolor;
+        color: @main-color;
+        font-size: 1em;
+        padding: 2em 3em;
+        font-weight: 800;
+        letter-spacing: 5px;
+        width: auto;
+      }
+    }
+  }
+  .advantage, .recent{
+    .title{
+      padding: 1em 0em;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      h2{
+        width: auto;
+        height: 3em;
+        line-height: 3em;
+        color: @main-color;
+        &:before, &:after{
+          display: inline-block;
+          content: '';
+          width: 5em;
+          border-top: @main-color 1px solid;
+          line-height: 3em;
+          height: 0.3em;
+        }
+      }
+    }
+  }
+  .advantage{
+    padding: 0em 3em;
+    width: 100%;
+    .special{
+      padding: 3em 0em;
+      display: flex;
+      justify-content: space-around;
+      .left, .right{
+        text-align: center;
+        width: 30%;
+        img{
+          width: 3em;
+          height: 3em;
+        }
+        h3{
+          height: 3em;
+          line-height: 3em;
+        }
+      }
+    }
+  }
+  .recent{
+    padding: 0em 3em;
+    width: 100%;
+    .post{
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+
+      .block{
+        width: 45%;
+        background-color: @element-bgcolor;
+        padding: 2em;
+        margin-bottom: 1em;
       }
     }
   }
