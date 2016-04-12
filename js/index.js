@@ -55,10 +55,7 @@ $(function() {
     }
 
     /*header*/
-    $('.menu ul li').on('click', function() {
-        // $('.menu ul li').removeClass('active');
-        // $(this).addClass('active');
-        //window.location.replace(url + '?index=' + ($(this).index()+1));
+    var clickFunction = function() {
         var obj = {
             Page: 'index',
             Url: 'index.html?index=' + ($(this).index() + 1)
@@ -66,6 +63,19 @@ $(function() {
         history.pushState(obj, obj.Page, obj.Url);
         var index = $.UrlParam('index');
         switchPage(index);
+        $('.veil').click();
+    };
+    $('.menu ul li, .mobile-menu ul li').on('click', clickFunction);
+
+    var mobileMenuStatic = false;
+    $('.mobile-menu-button').on('click', function(){
+      $('body').animate({right: '200px'}, 'slow');
+      $('.veil').fadeIn('slow');
+      mobileMenuStatic = !mobileMenuStatic;
+    });
+    $('.veil').on('click', function(){
+      $('body').animate({right: '0px'}, 'slow');
+      $('.veil').fadeOut('slow');
     });
 
 
