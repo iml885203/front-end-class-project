@@ -86,7 +86,10 @@ $(function() {
     $(window).on('scroll', function() {
       var scrollTop = $(this).scrollTop();
       /*image blurry*/
-      $('.blurry').css('opacity', scrollTop/200);
+      var $blurry = $('.blurry');
+      var imageBottom = ($blurry.outerHeight() + $blurry.offset().top);
+      var blurryPosition = scrollTop/(imageBottom/3*2);
+      $blurry.css('opacity', (blurryPosition<=1)?blurryPosition:1);
       /*scroll top*/
       if(scrollTop >= 200){
         $('.scrollup').fadeIn().css("display","flex");;
