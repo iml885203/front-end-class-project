@@ -23,6 +23,30 @@ body{
     z-index: 1;
     background-color: rgba(0, 0, 0, 0.3);
   }
+  .scrollup{
+    background-color: @main-color;
+    border-radius: 50%;
+    position: fixed;
+    right: 0.5em;
+    bottom: 2em;
+    width: 3em;
+    height: 3em;
+    z-index: 1;
+    opacity: 0.5;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    &:after{
+      content: '';
+      border-bottom: white 1.5em solid;
+      border-right: rgba(0, 0, 0, 0) 0.8em solid;
+      border-left: rgba(0, 0, 0, 0) 0.8em solid;
+      box-sizing: border-box;
+      box-sizing: border-box;
+    }
+  }
 }
 p, h3{
   line-height: 1.8em;
@@ -63,7 +87,6 @@ p{
 }
 .header{
   .LRPadding;
-  background-color: @element-bgcolor;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -85,11 +108,32 @@ p{
         padding: 1em;
         cursor: pointer;
         transition: 0.5s;
-        &.active{
+        position: relative;
+        &::after{
           background-color: @main-color;
-          color: white;
+          content: '';
+          position: absolute;
+          width: 0%;
+          height: 0%;
+          display: block;
+          top: 50%;
+          right: 0;
+          bottom: 0;
+          left: 50%;
+          transition: 0.5s;
+          z-index: -1;
         }
-        &:hover{
+        &.active{
+          z-index: 0;
+          color: white;
+          &::after{
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+          }
+        }
+        &:active{
           .active;
         }
       }
@@ -134,6 +178,10 @@ p{
   .surface{
     width: 100%;
     position: relative;
+    .blurry{
+      position: absolute;
+      opacity: 0;
+    }
     img{
       width: 100%;
     }
@@ -293,7 +341,7 @@ p{
   .up{
     //padding: 1em 3em;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
     .logo{
@@ -316,5 +364,27 @@ p{
   .copyright{
     padding: 1em;
     text-align: center;
+  }
+
+
+
+}
+/*effect*/
+.insertup{
+  position: relative;
+  -moz-transform: translate3d(0px, 100px, 0px);
+  -webkit-transform: translate3d(0px, 100px, 0px);
+  -o-transform: translate(0px, 100px);
+  -ms-transform: translate(0px, 100px);
+  transform: translate3d(0px, 100px, 0px);
+  opacity: 0;
+  transition: 0.5s;
+  &.insert{
+    -moz-transform: translate3d(0px, 0px, 0px);
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    -o-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    transform: translate3d(0px, 0px, 0px);
+    opacity: 1;
   }
 }

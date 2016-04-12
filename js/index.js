@@ -19,6 +19,10 @@ $(function() {
 
     function switchPage(i) {
       var fadein = function(){
+        if($(window).width() < '768'){
+          $('.surface img').attr('src','images/surface_backup.png');
+          $('.blurry').attr('src','images/surface_backup_blurry.png');
+        }
         $(this).fadeIn(500,function(){
           /*這邊寫換頁動畫*/
           var oao = $('.oao');
@@ -50,8 +54,7 @@ $(function() {
     if (!!index) {
         switchPage(index);
     } else {
-        $('.content').load('layout/home.html').hide(0).fadeIn(1000);
-        $('.menu ul li:nth-child(1)').addClass('active');
+        switchPage('1');
     }
 
     /*header*/
@@ -67,16 +70,59 @@ $(function() {
     };
     $('.menu ul li, .mobile-menu ul li').on('click', clickFunction);
 
-    var mobileMenuStatic = false;
     $('.mobile-menu-button').on('click', function(){
       $('body').animate({right: '200px'}, 'slow');
       $('.veil').fadeIn('slow');
-      mobileMenuStatic = !mobileMenuStatic;
     });
     $('.veil').on('click', function(){
       $('body').animate({right: '0px'}, 'slow');
       $('.veil').fadeOut('slow');
     });
+    $('.scrollup').on('click', function(){
+      $('html, body').animate({scrollTop: 0}, 'slow');
+    });
 
+    /*home*/
+    $(window).on('scroll', function() {
+      var scrollTop = $(this).scrollTop();
+      /*image blurry*/
+      $('.blurry').css('opacity', scrollTop/200);
+      /*scroll top*/
+      if(scrollTop >= 200){
+        $('.scrollup').fadeIn().css("display","flex");;
+      }
+      else{
+        $('.scrollup').fadeOut();
+      }
+      var window_bottom_position = ($(this).scrollTop() + $(this).height());
+
+    });
+
+    /*animation-element*/
+
+    var $window = $(window);
+
+    function check_if_in_view() {
+      var window_height = $window.height();
+      var window_top_position = $window.scrollTop();
+      var window_bottom_position = (window_top_position + window_height);
+      var $animation_elements = $('.insertup');
+      $.each($animation_elements, function() {
+        var $element = $(this);
+        var element_height = $element.outerHeight();
+        var element_top_position = $element.offset().top;
+        var element_bottom_position = (element_top_position + element_height);
+
+        //check to see if this current container is within viewport
+        if ((element_bottom_position >= window_top_position) &&
+          (element_top_position <= window_bottom_position)) {
+          $element.addClass('insert');
+        } else {
+          $element.removeClass('insert');
+        }
+      });
+    }
+
+    $window.on('scroll resize', check_if_in_view);
 
 });
