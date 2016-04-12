@@ -36,6 +36,11 @@ $(function() {
                   $(this).load('layout/home.html',fadein);
                 });
                 break;
+            case '4':
+                $('.content').fadeOut(500,function(){
+                  $(this).load('layout/instruction.html',fadein);
+                });
+                break;
             case '5':
                 $('.content').fadeOut(500,function(){
                   $(this).load('layout/aspect.html',fadein);
@@ -100,9 +105,31 @@ $(function() {
       var window_bottom_position = ($(this).scrollTop() + $(this).height());
 
     });
+    /*我不知道這個要擺哪邊得斯*/
+    $('.arrow-next').on('click',function() {
+      var $currentSlide = $('.active-slide');
+      var nextSlide = $currentSlide.next();
+      var $currentDot = $('.active-dot');
+      var nextDot = $currentDot.next();
+
+      $currentSlide.fadeOut(500).removeClass('active-slide');
+      nextSlide.fadeIn(500).addClass('active-slide');
+      $currentDot.removeClass('active-dot');
+      nextDot.addClass('active-dot');
+    });
+    $('.arrow-prev').on('click',function() {
+      var $currentSlide = $('.active-slide');
+      var prevSlide = $currentSlide.prev();
+      var $currentDot = $('.active-dot');
+      var prevDot = $currentDot.prev();
+
+      $currentSlide.fadeOut(500).removeClass('active-slide');
+      prevSlide.fadeIn(500).addClass('active-slide');
+      $currentDot.removeClass('active-dot');
+      prevDot.addClass('active-dot');
+    });
 
     /*animation-element*/
-
     var $window = $(window);
 
     function check_if_in_view() {
@@ -124,8 +151,7 @@ $(function() {
           $element.removeClass('insert');
         }
       });
-    }
-
+    };
     $window.on('scroll resize', check_if_in_view);
 
 });
