@@ -11,6 +11,7 @@ body{
   background-color: @bg-color;
   position: relative;
   overflow-x: hidden;
+  font-family: Helvetica Neue, Roboto, Arial, sans-serif;
   .veil{
     display: none;
     content: '';
@@ -28,6 +29,12 @@ p, h3{
 }
 p{
   font-weight: 200;
+}
+.LRPadding{
+  padding: 0em 3em;
+  @media @mobile{
+    padding: 0em 1em;
+  }
 }
 .mobile-menu{
   width: 100%;
@@ -55,7 +62,7 @@ p{
   }
 }
 .header{
-  padding: 0em 3em;
+  .LRPadding;
   background-color: @element-bgcolor;
   display: flex;
   justify-content: space-between;
@@ -147,6 +154,9 @@ p{
         font-weight: 800;
         letter-spacing: 5px;
         padding: 1em;
+        p{
+          font-weight: 800;
+        }
       }
     }
   }
@@ -180,7 +190,7 @@ p{
     }
   }
   .advantage{
-    padding: 0em 3em;
+    .LRPadding;
     width: 100%;
     .special{
       padding: 3em 0em;
@@ -206,7 +216,7 @@ p{
     }
   }
   .recent{
-    padding: 0em 3em;
+    .LRPadding;
     width: 100%;
     .post{
       display: flex;
@@ -252,7 +262,7 @@ p{
   .aboutus{
     display: flex;
     justify-content: space-around;
-    padding: 0em 3em;
+    .LRPadding;
     .personal_info{
       width: 50%;
       text-align: center;
@@ -281,7 +291,7 @@ p{
     color: inherit;
   }
   .up{
-    padding: 1em 3em;
+    //padding: 1em 3em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -294,7 +304,6 @@ p{
     }
     .partners, .about, .contact{
       text-align: center;
-      width: 25%;
       margin: 1em;
       a{
         text-decoration: none;

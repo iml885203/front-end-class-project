@@ -43,8 +43,8 @@ $(function() {
                 });
                 break;
         }
-        $('.menu ul li').removeClass('active');
-        $('.menu ul li:nth-child(' + i + ')').addClass('active');
+        $('.menu ul li, .mobile-menu ul li').removeClass('active');
+        $('.menu ul li:nth-child(' + i + '), .mobile-menu ul li:nth-child(' + i + ')').addClass('active');
     };
     var index = $.UrlParam('index');
     if (!!index) {
