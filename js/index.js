@@ -74,32 +74,39 @@ $(function() {
                     $(this).load('layout/instruction.html', function() {
                       ajaxUnbild();
                       /*我不知道這個要擺哪邊得斯*/
+                      $('.active-slide').hide().fadeIn(500);
                       $('.arrow-next').bind('click', function() {
                           var $currentSlide = $('.active-slide');
-                          var nextSlide = $currentSlide.next();
-                          console.log(nextSlide);
+                          var nextSlide = $currentSlide.next('.slide');
                           var $currentDot = $('.active-dot');
-                          var nextDot = $currentDot.next();
+                          var nextDot = $currentDot.next('.dot');
 
-                          $currentSlide.fadeOut(500).removeClass('active-slide');
-                          nextSlide.fadeIn(500).addClass('active-slide');
-                          $currentDot.removeClass('active-dot');
-                          nextDot.addClass('active-dot');
-                          return 0;
+                          if(nextSlide.length != 0){
+                            $currentSlide.fadeOut(500, function(){
+                              nextSlide.fadeIn(500).addClass('active-slide');
+                            }).removeClass('active-slide');
+                            $currentDot.removeClass('active-dot');
+                            nextDot.addClass('active-dot');
+                          }
                       });
                       $('.arrow-prev').bind('click', function() {
                           var $currentSlide = $('.active-slide');
-                          var prevSlide = $currentSlide.prev();
+                          var prevSlide = $currentSlide.prev('.slide');
                           var $currentDot = $('.active-dot');
-                          var prevDot = $currentDot.prev();
+                          var prevDot = $currentDot.prev('.dot');
 
-                          $currentSlide.fadeOut(500).removeClass('active-slide');
-                          prevSlide.fadeIn(500).addClass('active-slide');
-                          $currentDot.removeClass('active-dot');
-                          prevDot.addClass('active-dot');
+                          if(prevSlide.length != 0){
+                            $currentSlide.fadeOut(500, function(){
+                              prevSlide.fadeIn(500).addClass('active-slide');
+                            }).removeClass('active-slide');
+                            $currentDot.removeClass('active-dot');
+                            prevDot.addClass('active-dot');
+                          }
+
                       });
                         $(this).fadeIn(500, function() {
                             /*這邊寫換頁動畫*/
+
                         });
                     });
                 });
