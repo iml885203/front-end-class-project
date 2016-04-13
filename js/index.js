@@ -69,6 +69,30 @@ $(function() {
                 });
 
                 break;
+                case '2':
+                    $('.content').fadeOut(500, function() {
+                        $(this).load('layout/aspect.html', function() {
+                          ajaxUnbild();
+                          /*aspect*/
+
+                          $(this).fadeIn(500, function() {
+                              /*這邊寫換頁動畫*/
+                          });
+                        });
+                    });
+                    break;
+                    case '3':
+                        $('.content').fadeOut(500, function() {
+                            $(this).load('layout/anonymous.html', function() {
+                              ajaxUnbild();
+                              /*aspect*/
+
+                              $(this).fadeIn(500, function() {
+                                  /*這邊寫換頁動畫*/
+                              });
+                            });
+                        });
+                        break;
             case '4':
                 $('.content').fadeOut(500, function() {
                     $(this).load('layout/instruction.html', function() {
@@ -187,7 +211,7 @@ $(function() {
         var window_height = $window.height();
         var window_top_position = $window.scrollTop();
         var window_bottom_position = (window_top_position + window_height);
-        var $animation_elements = $('.insertup');
+        var $animation_elements = $('.insertup, .insertleft, .insertright');
         $.each($animation_elements, function() {
             var $element = $(this);
             var element_height = $element.outerHeight();
@@ -195,8 +219,7 @@ $(function() {
             var element_bottom_position = (element_top_position + element_height);
 
             //check to see if this current container is within viewport
-            if ((element_bottom_position >= window_top_position) &&
-                (element_top_position <= window_bottom_position)) {
+            if ((element_top_position <= window_bottom_position)) {
                 $element.addClass('insert');
             } else {
                 $element.removeClass('insert');
