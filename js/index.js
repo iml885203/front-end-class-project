@@ -67,12 +67,18 @@ $(function() {
         break;
       case '2':
         $('.content').fadeOut(500, function() {
-          $(this).load('layout/aspect.html', function() {
+          $(this).load('layout/nooks.html', function() {
             ajaxUnbild();
-            /*aspect*/
+            /*nooks*/
 
             $(this).fadeIn(500, function() {
               /*這邊寫換頁動畫*/
+
+            });
+            $('.grid').masonry({
+              itemSelector : '.grid-thing',
+              columnWidth : 350,
+              gutter : 20
             });
           });
         });
