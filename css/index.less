@@ -491,8 +491,11 @@ p {
       .slide-div {
         position: relative;
         //height: 400px;
-        width: 40%;
+        width: 50%;
         margin: 0 auto;
+        @media @mobile {
+          width: 100%;
+        }
         .slide-img {
           width:100%;
         }
@@ -562,6 +565,8 @@ p {
     padding: 2em;
     margin: 2em;
     background-color: @element-bgcolor;
+    border-color: @main-color;
+    border-style: double;
   }
 }
 .footer {
