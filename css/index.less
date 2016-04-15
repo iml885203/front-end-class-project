@@ -86,20 +86,28 @@ p {
   }
 }
 .mobile-menu {
-  width: 100%;
+  width: 50%;
   height: 100%;
-  background-color: white;
+  background-color: @bg-color;
   position: absolute;
   left: 100%;
-  z-index: 1;
+  z-index: 100;
+  .title{
+    color: @main-color;
+    padding: 1.3em;
+    transition: 0.5s;
+    margin-right: 3em;
+    display: inline-block;
+  }
   ul {
     padding: 0;
     li {
       list-style-type: none;
       color: @main-color;
-      padding: 1em;
+      padding: 1.3em;
       cursor: pointer;
       transition: 0.5s;
+      margin-right: 3em;
       &.active {
         background-color: @main-color;
         color: white;
@@ -165,24 +173,66 @@ p {
     }
     .mobile-menu-button {
       display: none;
-      padding: 0.5em;
-      transition: 0.5s;
-      span {
+      transition: all 0.3s;
+      background-color: rgba(0,0,0,0);
+      position: relative;
+      z-index: 100;
+      height: 3em;
+      width: 3em;
+      .bar {
         background-color: @main-color;
-        height: 2px;
-        width: 22px;
-        margin-bottom: 5px;
+        height: 3px;
+        width: 2em;
+        margin: auto;
         display: block;
-        transition: 0.5s;
-        &:nth-child(3) {
-          margin-bottom: 0;
+        transition: all 0.3s;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        &:before, &:after {
+          background-color: @main-color;
+          height: 3px;
+          width: 2em;
+          margin-bottom: 5px;
+          display: block;
+          transition: all 0.3s;
+          content: '';
+          position: absolute;
+          transition-property: top, -webkit-transform;
+          transition-property: top, transform;
+          transition-property: top, transform, -webkit-transform;
         }
       }
-      &:hover {
-        span {
-          background-color: white;
+      &.effect{
+        .bar{
+          &:before, &:after{
+            transition-delay: 0s,0.3s;
+          }
+          &:before{
+            top: -10px;
+          }
+          &:after{
+            top: 10px;
+          }
         }
-        background-color: @main-color;
+      }
+
+      &.active{
+        .bar{
+          background-color: rgba(0,0,0,0);
+          &:before, &:after{
+            top: 0;
+            transition-delay: 0s,0.3s;
+          }
+          &:before{
+            transform: rotate(45deg);
+          }
+          &:after{
+            transform: rotate(-45deg);
+          }
+        }
       }
     }
   }
@@ -281,13 +331,20 @@ p {
   }
   /*anonymous.html*/
   .anonymous {
-    .LRPadding;
+    .bigimage{
+      width: 100%;
+      img{
+        width: 100%;
+      }
+    }
+
     width: 100%;
     padding-bottom: 3em;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     .explanation {
+      .LRPadding;
       .example {
         font-size: 0.8em;
         font-weight: 100;

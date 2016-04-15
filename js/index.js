@@ -207,16 +207,26 @@ $(function() {
   $('.menu ul li, .mobile-menu ul li').on('click', clickFunction);
 
   $('.mobile-menu-button').on('click', function() {
-    $('body').animate({
-      right: '200px'
-    }, 'slow');
-    $('.veil').fadeIn('slow');
+
+    if(!$(this).hasClass('active')){
+      $('.mobile-menu').animate({
+        left: '50%'
+      }, 'slow');
+      $('body').css('overflowY', 'hidden');
+      $('.veil').fadeIn('slow');
+      $(this).addClass('active');
+    }
+    else{
+      $('.veil').click();
+    }
   });
   $('.veil').on('click', function() {
-    $('body').animate({
-      right: '0px'
+    $('.mobile-menu').animate({
+      left: '100%'
     }, 'slow');
+    $('body').css('overflowY', 'auto');
     $('.veil').fadeOut('slow');
+    $('.mobile-menu-button').removeClass('active');
   });
   $('.scrollup').on('click', function() {
     $('html, body').animate({
