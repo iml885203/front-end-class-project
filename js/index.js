@@ -67,17 +67,18 @@ $(function() {
         break;
       case '2':
         $('.content').fadeOut(500, function() {
-          $(this).load('layout/nooks.html', function() {
+          $(this).load('layout/nooks.php', function() {
             ajaxUnbild();
             /*nooks*/
-
+              $window.scroll();
             $(this).fadeIn(500, function() {
               /*這邊寫換頁動畫*/
 
             });
             $('.grid').masonry({
               itemSelector : '.grid-thing',
-              columnWidth : 10
+              columnWidth : 10,
+              isFitWidth: true
             });
           });
         });
@@ -86,8 +87,17 @@ $(function() {
         $('.content').fadeOut(500, function() {
           $(this).load('layout/anonymous.html', function() {
             ajaxUnbild();
-            /*aspect*/
+            /*anonymous*/
+            console.log($('.send'));
+            $('.send').bind('click',function(){
+              $.post('layout/writefile.php', {
+                 content: $('.input textarea').val()
+              },function(data){
+                alert(data);
+              });
 
+              //alert('寫入檔案' + $('.input textarea').val());
+            });
             $(this).fadeIn(500, function() {
               /*這邊寫換頁動畫*/
             });
@@ -197,7 +207,7 @@ $(function() {
   var clickFunction = function() {
     var obj = {
       Page: 'index',
-      Url: 'index.html?index=' + ($(this).index() + 1)
+      Url: '?index=' + ($(this).index() + 1)
     };
     history.pushState(obj, obj.Page, obj.Url);
     var index = $.UrlParam('index');

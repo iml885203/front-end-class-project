@@ -1,6 +1,43 @@
 <div class="nooks">
   <div class="grid">
-    <div class="grid-thing">
+    <?php
+    //readfile
+      $filename = "../data.txt";
+      $str = "";
+      if(file_exists($filename)){
+        $file = fopen($filename, "r");
+        if($file != NULL)
+        {
+            while (!feof($file)) {
+                // $str .= fgets($file)."<br>";
+                $index = fgets($file);
+                if($index == "start\n"){
+                  //echo "----start----<br>";
+                  echo "<div class='grid-thing insertup'>";
+                  $number = fgets($file);
+                  //echo "numbet: ".$number."<br>";
+                  echo "<h3>#".$number."</h3><p>";
+
+                  while(true){
+                    $content = fgets($file);
+                    if($content == "end\n"){
+                      //echo "----end----<br>";
+                      echo "</p></div>";
+                      break;
+                    }
+                    else{
+                      echo $content."<br>";
+                    }
+                  }
+                }
+            }
+            fclose($file);
+        }
+      }
+      echo $str;
+    ?>
+
+    <div class="grid-thing insertup">
       <h3>#24</h3>
       <p>
         25y/172/58/微腹肌 ‪#‎濃眉大眼溫柔系極稀有暖男‬
@@ -9,7 +46,7 @@
         <br> 以上皆是 ‪#‎誠實作答‬ 如果 ‪#‎妳‬ 覺得可以相信我 覺得可以聊看看 歡迎來信： 1.詢問 2.給張妳最有自信的照片 3.附上怎麼聯絡到妳
       </p>
     </div>
-    <div class="grid-thing">
+    <div class="grid-thing insertup">
       <h3>#24</h3>
       <p>
         25y/172/58/微腹肌 ‪#‎濃眉大眼溫柔系極稀有暖男‬
@@ -20,7 +57,7 @@
         <br> 以上皆是 ‪#‎誠實作答‬ 如果 ‪#‎妳‬ 覺得可以相信我 覺得可以聊看看 歡迎來信： 1.詢問 2.給張妳最有自信的照片 3.附上怎麼聯絡到妳
       </p>
     </div>
-    <div class="grid-thing">
+    <div class="grid-thing insertup">
       <h3>#24</h3>
       <p>
         25y/172/58/微腹肌 ‪#‎濃眉大眼溫柔系極稀有暖男‬
@@ -29,7 +66,7 @@
         <br> 以上皆是 ‪#‎誠實作答‬ 如果 ‪#‎妳‬ 覺得可以相信我 覺得可以聊看看 歡迎來信： 1.詢問 2.給張妳最有自信的照片 3.附上怎麼聯絡到妳
       </p>
     </div>
-    <div class="grid-thing">
+    <div class="grid-thing insertup">
       <h3>#24</h3>
       <p>
         25y/172/58/微腹肌 ‪#‎濃眉大眼溫柔系極稀有暖男‬
@@ -38,7 +75,7 @@
         <br> 以上皆是 ‪#‎誠實作答‬ 如果 ‪#‎妳‬ 覺得可以相信我 覺得可以聊看看 歡迎來信： 1.詢問 2.給張妳最有自信的照片 3.附上怎麼聯絡到妳
       </p>
     </div>
-    <div class="grid-thing">
+    <div class="grid-thing insertup">
       <h3>#24</h3>
       <p>
         25y/172/58/微腹肌 ‪#‎濃眉大眼溫柔系極稀有暖男‬
@@ -47,7 +84,7 @@
         <br> 以上皆是 ‪#‎誠實作答‬ 如果 ‪#‎妳‬ 覺得可以相信我 覺得可以聊看看 歡迎來信： 1.詢問 2.給張妳最有自信的照片 3.附上怎麼聯絡到妳
       </p>
     </div>
-    <div class="grid-thing">
+    <div class="grid-thing insertup">
       <h3>#24</h3>
       <p>
         25y/172/58/微腹肌 ‪#‎濃眉大眼溫柔系極稀有暖男‬
