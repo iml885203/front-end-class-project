@@ -77,8 +77,7 @@ $(function() {
             });
             $('.grid').masonry({
               itemSelector : '.grid-thing',
-              columnWidth : 350,
-              gutter : 20
+              columnWidth : 10
             });
           });
         });
@@ -131,23 +130,23 @@ $(function() {
 
             });
             /*滑鼠進出圖片---說明文字*/
-            $('slide-div').bind('mouseenter', function() {
+            $('.slide-div').bind('mouseenter', function() {
               var title = $(this).data('title');
               var description = $(this).data('description');
-
+              console.log(title);
               if(!$(this).children("div").length){
           			$(this).append('<div class="overlay"></div>');
           		}
 
-              var overlay = $(this).children('.overlay');
+              var $overlay = $(this).children('.overlay');
 
-              overlay.html('<h3>'+title+'</h3><p>'+description+'</p>');
+              $overlay.html('<h3>'+title+'</h3><p>'+description+'</p>');
 
-              overlay.fadeIn(500);
+              $overlay.fadeIn(500);
             });
             $('.slide-div').bind('mouseleave',function() {
-              var overlay = $(this).children('.overlay');
-              overlay.fadeOut(500);
+              var $overlay = $(this).children('.overlay');
+              $overlay.fadeOut(500);
             });
             $(this).fadeIn(500, function() {
               /*這邊寫換頁動畫*/
