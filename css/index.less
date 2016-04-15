@@ -26,7 +26,7 @@ body {
     background-color: @main-color;
     border-radius: 50%;
     position: fixed;
-    right: 0.5em;
+    right: 5%;
     bottom: 2em;
     width: 3em;
     height: 3em;
@@ -97,9 +97,11 @@ p {
   .title{
     color: @main-color;
     padding: 1.3em;
+    margin-right: 20%;
     transition: 0.5s;
     margin-right: 3em;
     display: inline-block;
+    border-bottom: @main-color 1px solid;
   }
   ul {
     padding: 0;
@@ -109,10 +111,26 @@ p {
       padding: 1.3em;
       cursor: pointer;
       transition: 0.5s;
-      margin-right: 3em;
+      margin-right: 20%;
       &.active {
         background-color: @main-color;
         color: white;
+        position: relative;
+        &:after{
+          content: '';
+          position: absolute;
+          right: -13%;
+          width: 1em;
+          height: 1em;
+          //background-color: @main-color;
+          border-top: rgba(0,0,0,0) 0.5em solid;
+          border-bottom: rgba(0,0,0,0) 0.5em solid;
+          border-right: @main-color 1em solid;
+          box-sizing: border-box;
+          top: 0;
+          bottom: 0;
+          margin: auto 0;
+        }
       }
       &:hover {
         .active;
