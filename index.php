@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=320px; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
     <title>北科小角落</title>
+     <link rel="icon" href="images/icon.png" type="image/png" sizes="32x32"> 
     <link rel="stylesheet/less" type="text/css" href="css/index.less">
 </head>
 
