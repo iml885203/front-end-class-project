@@ -67,12 +67,18 @@ $(function() {
         break;
       case '2':
         $('.content').fadeOut(500, function() {
-          $(this).load('layout/aspect.html', function() {
+          $(this).load('layout/nooks.html', function() {
             ajaxUnbild();
-            /*aspect*/
+            /*nooks*/
 
             $(this).fadeIn(500, function() {
               /*這邊寫換頁動畫*/
+
+            });
+            $('.grid').masonry({
+              itemSelector : '.grid-thing',
+              columnWidth : 350,
+              gutter : 20
             });
           });
         });
@@ -123,6 +129,25 @@ $(function() {
                 prevDot.addClass('active-dot');
               }
 
+            });
+            /*滑鼠進出圖片---說明文字*/
+            $('slide-div').bind('mouseenter', function() {
+              var title = $(this).data('title');
+              var description = $(this).data('description');
+
+              if(!$(this).children("div").length){
+          			$(this).append('<div class="overlay"></div>');
+          		}
+
+              var overlay = $(this).children('.overlay');
+
+              overlay.html('<h3>'+title+'</h3><p>'+description+'</p>');
+
+              overlay.fadeIn(500);
+            });
+            $('.slide-div').bind('mouseleave',function() {
+              var overlay = $(this).children('.overlay');
+              overlay.fadeOut(500);
             });
             $(this).fadeIn(500, function() {
               /*這邊寫換頁動畫*/
