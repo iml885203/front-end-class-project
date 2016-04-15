@@ -210,9 +210,11 @@ $(function() {
   $('.mobile-menu-button').on('click', function() {
 
     if(!$(this).hasClass('active')){
-      $('.mobile-menu').animate({
-        left: '50%'
-      }, 'slow');
+      $('.mobile-menu').css({
+        'opacity': '1',
+        'left': '50%'
+      });
+
       $('body').css('overflowY', 'hidden');
       $('.veil').fadeIn('slow');
       $(this).addClass('active');
@@ -222,9 +224,11 @@ $(function() {
     }
   });
   $('.veil').on('click', function() {
-    $('.mobile-menu').animate({
-      left: '100%'
-    }, 'slow');
+    $('.mobile-menu').css({
+      'opacity': '0',
+      'left': '100%'
+    });
+
     $('body').css('overflowY', 'auto');
     $('.veil').fadeOut('slow');
     $('.mobile-menu-button').removeClass('active');
