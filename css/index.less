@@ -202,9 +202,9 @@ p {
           transition: all 0.3s;
           content: '';
           position: absolute;
-          transition-property: top, -webkit-transform;
           transition-property: top, transform;
-          transition-property: top, transform, -webkit-transform;
+          -moz-transition-property: top, transform;
+          -webkit-transition-property: top, transform;
         }
       }
       &.effect{

@@ -215,7 +215,7 @@ $(function() {
       });
 
       $('body').css('overflowY', 'hidden');
-      $('.veil').fadeIn('slow');
+      $('.veil').fadeIn();
       $(this).addClass('active');
     }
     else{
@@ -229,7 +229,7 @@ $(function() {
     });
 
     $('body').css('overflowY', 'auto');
-    $('.veil').fadeOut('slow');
+    $('.veil').fadeOut();
     $('.mobile-menu-button').removeClass('active');
   });
   $('.scrollup').on('click', function() {
