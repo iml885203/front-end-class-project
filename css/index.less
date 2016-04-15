@@ -173,7 +173,7 @@ p {
     }
     .mobile-menu-button {
       display: none;
-      transition: all .5s;
+      transition: all 0.3s;
       background-color: rgba(0,0,0,0);
       position: relative;
       z-index: 100;
@@ -185,7 +185,7 @@ p {
         width: 2em;
         margin: auto;
         display: block;
-        transition: all 0.5s;
+        transition: all 0.3s;
         position: absolute;
         top: 0;
         left: 0;
@@ -197,31 +197,34 @@ p {
           width: 2em;
           margin-bottom: 5px;
           display: block;
-          transition: all 0.5s;
+          transition: all 0.3s;
           content: '';
           position: absolute;
           transition-property: top, -webkit-transform;
           transition-property: top, transform;
           transition-property: top, transform, -webkit-transform;
-
         }
-        &:before{
-          top: -10px;
-        }
-        &:after{
-          top: 10px;
+      }
+      &.effect{
+        .bar{
+          &:before, &:after{
+            transition-delay: 0s,0.3s;
+          }
+          &:before{
+            top: -10px;
+          }
+          &:after{
+            top: 10px;
+          }
         }
       }
 
       &.active{
         .bar{
           background-color: rgba(0,0,0,0);
-
           &:before, &:after{
             top: 0;
             transition-delay: 0s,0.3s;
-
-            //background-color: white;
           }
           &:before{
             transform: rotate(45deg);
@@ -230,7 +233,6 @@ p {
             transform: rotate(-45deg);
           }
         }
-
       }
     }
   }
