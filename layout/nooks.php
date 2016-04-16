@@ -43,8 +43,8 @@
         echo "<div class='grid-thing insertup'>";
         echo '<h3>#'.$numberArray[$count].'</h3><p>';
         $contentCount = count($contentArray[$count]);
-        while($contentCount--){
-          echo $contentArray[$count][$contentCount].'<br>';
+        for($i=0 ; $i < $contentCount ; $i++){
+          echo $contentArray[$count][$i].'<br>';
         }
         echo '</p></div>';
       }

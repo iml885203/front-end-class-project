@@ -208,10 +208,7 @@ $(function() {
     $('.content').fadeOut(500, function() {
       $(this).load('layout/sendsucess.php?number=' + data);
     });
-    $('.content').fadeIn(500, function(){
-
-
-    });
+    $('.content').fadeIn(500);
   }
 
   /*header*/
