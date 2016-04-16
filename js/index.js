@@ -88,12 +88,12 @@ $(function() {
           $(this).load('layout/anonymous.html', function() {
             ajaxUnbild();
             /*anonymous*/
-            console.log($('.send'));
             $('.send').bind('click',function(){
               $.post('layout/writefile.php', {
                  content: $('.input textarea').val()
               },function(data){
-                alert(data);
+                //alert(data);
+                gotoSendsucess(data);
               });
 
               //alert('寫入檔案' + $('.input textarea').val());
@@ -140,18 +140,17 @@ $(function() {
 
             });
             /*滑鼠進出圖片---說明文字*/
-            $('.slide-div').bind('mouseenter', function() {
+            $('.slide-div').each(function(){
               var title = $(this).data('title');
               var description = $(this).data('description');
-              console.log(title);
               if(!$(this).children("div").length){
           			$(this).append('<div class="overlay"></div>');
           		}
-
               var $overlay = $(this).children('.overlay');
-
               $overlay.html('<h3>'+title+'</h3><p>'+description+'</p>');
-
+            });
+            $('.slide-div').bind('mouseenter', function() {
+              var $overlay = $(this).children('.overlay');
               $overlay.fadeIn(500);
             });
             $('.slide-div').bind('mouseleave',function() {
@@ -201,6 +200,18 @@ $(function() {
     switchPage(index);
   } else {
     switchPage('1');
+  }
+
+  /*render to sendsucess*/
+  function gotoSendsucess(data){
+    $('.scrollup').click();
+    $('.content').fadeOut(500, function() {
+      $(this).load('layout/sendsucess.php?number=' + data);
+    });
+    $('.content').fadeIn(500, function(){
+
+
+    });
   }
 
   /*header*/

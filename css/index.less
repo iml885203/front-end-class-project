@@ -349,6 +349,25 @@ p {
       }
     }
   }
+  /*nooks.html*/
+  .grid {
+    margin: 0 auto;
+    .grid-thing {
+      width: 350px;
+      padding: 2em;
+      margin: 1.5em;
+      background-color: @element-bgcolor;
+      border-color: @main-color;
+      border-style: double;
+      box-sizing: border-box;
+      word-break: break-all;
+      @media @mobile{
+        width: 270px;
+        padding: 1em;
+        margin: 1em;
+      }
+    }
+  }
   /*anonymous.html*/
   .anonymous {
     .bigimage{
@@ -389,6 +408,114 @@ p {
         color: white;
         padding: 0.5em;
         cursor: pointer;
+      }
+    }
+  }
+  /*instruction之我應該沒放錯位置吧?!*/
+  .instruction {
+    display: flex;
+    justify-content: center;
+    .slider {
+      padding-top: 10px;
+      position: relative;
+      width: 50%;
+      height: 100%;
+      background-color: @bg-color;
+      flex-wrap: wrap;
+      @media @mobile {
+        width: 100%;
+        .slide{
+          .overlay{
+            display: block !important;
+            opacity: 1 !important;
+          }
+        }
+      }
+      .slide {
+        text-align: center;
+        display: none;
+        width: 100%;
+        .slide-div {
+          position: relative;
+          //height: 400px;
+          width: 100%;
+
+
+          .slide-img {
+            width:100%;
+          }
+          .overlay{
+            display:none;
+            background:rgba(0, 0, 0, .5);
+            color:#fff;
+            position:absolute;
+            bottom:0;
+            left:0;
+            z-index: 1;
+            widows: 100%;
+            width: 100%;
+            padding:10px;
+            box-sizing:border-box;
+            pointer-events:none;
+            fontweight: 100;
+            h3{
+              //font-weight: 100;
+              margin:0;
+              padding:0;
+            }
+            p{
+              font-weight: 100;
+              margin: 0;
+              padding: 0;
+            }
+          }
+        }
+      }
+      .active-slide {
+        display: block;
+      }
+      .slide-image-nav{
+        position: absolute;
+        width: 100%;
+        height: 3em;
+        bottom: 50%;
+        pointer-events: none;
+        .arrow-next{
+          right: 0px;
+          position: absolute;
+        }
+        .arrow {
+          width: 3em;
+          opacity: .7;
+          pointer-events: auto;
+        }
+      }
+      .slide-nav {
+        text-align: center;
+        padding-top: 10px;
+        .arrow {
+          display: inline;
+          font-size: 0;
+          width: 20px;
+          height: 20px;
+        }
+        .dots {
+          list-style: none;
+          display: inline-block;
+          padding-left: 5px;
+          padding-right: 5px;
+          margin-bottom: 0;
+          li {
+            color: @main-color;
+            font-size: 30px;
+            padding-left: 5px;
+            padding-right: 5px;
+            display: inline;
+          }
+          .active-dot {
+            color: #acacac;
+          }
+        }
       }
     }
   }
@@ -492,106 +619,18 @@ p {
       }
     }
   }
-}
-/*instruction之我應該沒放錯位置吧?!*/
-.instruction {
-  display: flex;
-  justify-content: center;
-  .slider {
-    padding-top: 10px;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background-color: @bg-color;
-    flex-wrap: wrap;
-    .slide {
-      text-align: center;
-      display: none;
-      width: 100%;
-      .slide-div {
-        position: relative;
-        //height: 400px;
-        width: 50%;
-        margin: 0 auto;
-        @media @mobile {
-          width: 100%;
-        }
-        .slide-img {
-          width:100%;
-        }
-        .overlay{
-          display:none;
-          background:rgba(0, 0, 0, .5);
-          color:#fff;
-          position:absolute;
-          bottom:0;
-          left:0;
-          z-index:100;
-          widows: 100%;
-          width: 100%;
-          padding:10px;
-          box-sizing:border-box;
-          pointer-events:none;
-          fontweight: 100;
-          h3{
-            //font-weight: 100;
-            margin:0;
-            padding:0;
-          }
-          p{
-            font-weight: 100;
-            margin: 0;
-            padding: 0;
-          }
-        }
-      }
-    }
-    .active-slide {
-      display: block;
-    }
-    .slide-nav {
-      text-align: center;
-      padding-top: 10px;
-      .arrow {
-        display: inline;
-        font-size: 0;
-        width: 20px;
-        height: 20px;
-      }
-      .dots {
-        list-style: none;
-        display: inline-block;
-        padding-left: 5px;
-        padding-right: 5px;
-        margin-bottom: 0;
-        li {
-          color: @main-color;
-          font-size: 30px;
-          padding-left: 5px;
-          padding-right: 5px;
-          display: inline;
-        }
-        .active-dot {
-          color: #acacac;
-        }
-      }
+  /*sendsucess*/
+  .sendsucess{
+    text-align: center;
+    font-size: 2em;
+    padding: 7em 0em;
+    span{
+      //display: none;
     }
   }
 }
-/*nooks.html*/
-.grid {
-  margin: 0 auto;
-  .grid-thing {
-    width:350px;
-    padding: 2em;
-    margin: 2em;
-    background-color: @element-bgcolor;
-    border-color: @main-color;
-    border-style: double;
-    box-sizing: border-box;
-    word-break: break-all;
-  }
-}
+
+
 .footer {
   background-color: @main-color;
   color: white;
