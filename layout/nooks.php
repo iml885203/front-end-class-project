@@ -1,40 +1,53 @@
 <div class="nooks">
   <div class="grid">
     <?php
-    //readfile
-      $filename = "../data.txt";
-      $str = "";
-      if(file_exists($filename)){
-        $file = fopen($filename, "r");
-        if($file != NULL)
-        {
-            while (!feof($file)) {
-                // $str .= fgets($file)."<br>";
-                $index = fgets($file);
-                if($index == "start\n"){
-                  //echo "----start----<br>";
-                  echo "<div class='grid-thing insertup'>";
-                  $number = fgets($file);
-                  //echo "numbet: ".$number."<br>";
-                  echo "<h3>#".$number."</h3><p>";
-
-                  while(true){
-                    $content = fgets($file);
-                    if($content == "end\n"){
-                      //echo "----end----<br>";
-                      echo "</p></div>";
-                      break;
-                    }
-                    else{
-                      echo $content."<br>";
-                    }
-                  }
+      //readfile
+      $filename = '../data.txt';
+      $str = '';
+      if (file_exists($filename)) {
+        $file = fopen($filename, 'r');
+        if ($file != null) {
+          $count = 0;
+          $numberArray = array();
+          $contentArray = array();
+          while (!feof($file)) {
+            // $str .= fgets($file)."<br>";
+            $index = fgets($file);
+            if ($index == "start\n") {
+              //echo "----start----<br>";
+              //echo "<div class='grid-thing insertup'>";
+              $count++;
+              $number = fgets($file);
+              //echo "numbet: ".$number."<br>";
+              //echo '<h3>#'.$number.'</h3><p>';
+              array_push($numberArray, $number);
+              $contentArea = array();
+              while (true) {
+                $content = fgets($file);
+                if ($content == "end\n") {
+                  //echo "----end----<br>";
+                  //echo '</p></div>';
+                  array_push($contentArray, $contentArea);
+                  break;
+                } else {
+                  //echo $content.'<br>';
+                  array_push($contentArea, $content);
                 }
+              }
             }
-            fclose($file);
+          }
+          fclose($file);
         }
       }
-      echo $str;
+      while($count--){
+        echo "<div class='grid-thing insertup'>";
+        echo '<h3>#'.$numberArray[$count].'</h3><p>';
+        $contentCount = count($contentArray[$count]);
+        while($contentCount--){
+          echo $contentArray[$count][$contentCount].'<br>';
+        }
+        echo '</p></div>';
+      }
     ?>
 
     <div class="grid-thing insertup">
