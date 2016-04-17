@@ -55,13 +55,13 @@ $(function() {
               var blurryPosition = scrollTop / (imageBottom / 3 * 2);
               $blurry.css('opacity', (blurryPosition <= 1) ? blurryPosition : 1);
             });
-            $(this).fadeIn(500, function() {
-              /*這邊寫換頁動畫*/
-              $('.blurryInMain').addClass('In');
-
-
-            });
           });
+        });
+        $('.content').fadeIn(500, function() {
+          /*這邊寫換頁動畫*/
+          $('.blurryInMain').addClass('In');
+
+
         });
 
         break;
@@ -71,16 +71,16 @@ $(function() {
             ajaxUnbild();
             /*nooks*/
               $window.scroll();
-            $(this).fadeIn(500, function() {
-              /*這邊寫換頁動畫*/
-
-            });
             $('.grid').masonry({
               itemSelector : '.grid-thing',
               columnWidth : 10,
               isFitWidth: true
             });
           });
+        });
+        $('.content').fadeIn(500, function() {
+          /*這邊寫換頁動畫*/
+
         });
         break;
       case '3':
@@ -98,10 +98,11 @@ $(function() {
 
               //alert('寫入檔案' + $('.input textarea').val());
             });
-            $(this).fadeIn(500, function() {
-              /*這邊寫換頁動畫*/
-            });
           });
+        });
+        $('.content').fadeIn(500, function() {
+          /*這邊寫換頁動畫*/
+
         });
         break;
       case '4':
@@ -157,11 +158,11 @@ $(function() {
               var $overlay = $(this).children('.overlay');
               $overlay.fadeOut(500);
             });
-            $(this).fadeIn(500, function() {
-              /*這邊寫換頁動畫*/
-
-            });
           });
+        });
+        $('.content').fadeIn(500, function() {
+          /*這邊寫換頁動畫*/
+
         });
         break;
       case '5':
@@ -170,11 +171,11 @@ $(function() {
             ajaxUnbild();
             /*aspect*/
 
-            $(this).fadeIn(500, function() {
-              /*這邊寫換頁動畫*/
-              $window.scroll();
-            });
           });
+        });
+        $('.content').fadeIn(500, function() {
+          /*這邊寫換頁動畫*/
+          $window.scroll();
         });
         break;
       case '6':
@@ -183,10 +184,11 @@ $(function() {
             ajaxUnbild();
             /*aspect*/
 
-            $(this).fadeIn(500, function() {
-              /*這邊寫換頁動畫*/
-            });
           });
+        });
+        $('.content').fadeIn(500, function() {
+          /*這邊寫換頁動畫*/
+
         });
         break;
     }
@@ -204,11 +206,13 @@ $(function() {
 
   /*render to sendsucess*/
   function gotoSendsucess(data){
-    $('.scrollup').click();
     $('.content').fadeOut(500, function() {
       $(this).load('layout/sendsucess.php?number=' + data);
     });
-    $('.content').fadeIn(500);
+    $('.content').fadeIn(500, function(){
+      /*blurryin*/
+
+    });
   }
 
   /*header*/
