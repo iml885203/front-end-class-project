@@ -14,7 +14,7 @@ body {
   .veil {
     display: none;
     content: '';
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
@@ -89,7 +89,7 @@ p {
   width: 50%;
   height: 100%;
   background-color: @bg-color;
-  position: absolute;
+  position: fixed;
   left: 100%;
   z-index: 100;
   opacity: 0;
@@ -116,6 +116,7 @@ p {
         background-color: @main-color;
         color: white;
         position: relative;
+        pointer-events: none;
         &:after{
           content: '';
           position: absolute;
@@ -132,8 +133,9 @@ p {
           margin: auto 0;
         }
       }
-      &:hover {
-        .active;
+
+      &:active{
+        pointer-events: auto !important;
       }
     }
   }
@@ -143,6 +145,12 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 4em;
+  background-color: @bg-color;
+  z-index: 50;
   .logo {
     display: inline-block;
     height: 3em;
@@ -158,7 +166,7 @@ p {
         list-style-type: none;
         float: left;
         color: @main-color;
-        padding: 1em;
+        padding: 0.7em;
         cursor: pointer;
         transition: 0.5s;
         position: relative;
@@ -179,6 +187,7 @@ p {
         &.active {
           z-index: 0;
           color: white;
+          pointer-events: none;
           &::after {
             width: 100%;
             height: 100%;
@@ -187,7 +196,8 @@ p {
           }
         }
         &:active {
-          .active;
+          pointer-events: auto !important;
+          //.active;
         }
       }
     }
@@ -270,6 +280,8 @@ p {
 }
 .content {
   /*home.html*/
+  position: relative;
+  top: 4em;
   .surface {
     width: 100%;
     position: relative;
@@ -611,7 +623,7 @@ p {
     }
     @media @mobile {
       .WBblock {
-        display: none;
+        height: 15em;
       }
       .about {
         width: auto;
@@ -654,30 +666,47 @@ p {
   }
   /*sendsucess*/
   .sendsucess{
-    text-align: center;
-    font-size: 2em;
-    padding: 7em 0em;
-    span{
-      //display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    //flex-wrap: wrap;
+    flex-direction: column;
+    font-size: 1.5em;
+    color: @main-color;
+    z-index: 1;
+    background-color: @bg-color;
+    .blurryin{
+      padding: 1em;
+      width: 100%;
+      text-align: center;
     }
   }
 }
-
 .load{
-  width: 100%;
-  padding: 5em 0em;
+  //display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 3em;
   color: @main-color;
+  z-index: 1;
   background-color: @bg-color;
-  position: absolute;
-  z-index: 100;
 }
 .footer {
   background-color: @main-color;
   color: white;
+  position: relative;
+  top: 4em;
   a {
     color: inherit;
   }

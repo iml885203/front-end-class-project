@@ -1,7 +1,7 @@
 $(function() {
   var $window = $(window);
   var $load = $('.load');
-  $load.height($window.height()/10*8);
+  //$load.height($window.height()/10*8);
   //URL function
   $.UrlParam = function(name) {
       //宣告正規表達式
@@ -35,10 +35,13 @@ $(function() {
       }
       var window_bottom_position = ($(this).scrollTop() + $(this).height());
     });
+
     $load.fadeOut('400');
   }
   function switchPage(i) {
+
     $load.fadeIn('400', function(){
+      $('html, body').scrollTop('0');
       switch (i) {
         case '1':
           $('.content').fadeOut(0, function() {
@@ -212,13 +215,21 @@ $(function() {
 
   /*render to sendsucess*/
   function gotoSendsucess(data){
-    $('.content').fadeOut(500, function() {
-      $(this).load('layout/sendsucess.php?number=' + data);
-    });
-    $('.content').fadeIn(500, function(){
-      /*blurryin*/
+    $load.fadeIn('400', function() {
+      $('.content').fadeOut(0, function() {
+        $('html, body').scrollTop('0');
+        $(this).load('layout/sendsucess.php?number=' + data, function(){
+        $load.fadeOut('400');
+          $('.content').fadeIn(0, function(){
+            /*blurryin*/
+
+          });
+        });
+      });
 
     });
+
+
   }
 
   /*header*/
