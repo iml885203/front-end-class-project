@@ -285,6 +285,7 @@ p {
   /*instruction之我應該沒放錯位置吧?!*/
   /*aspect.html*/
   /*aboutUs*/
+  /*sendsucess*/
 }
 .content .surface {
   width: 100%;
@@ -384,6 +385,7 @@ p {
 @media only screen and (max-width: 768px) {
   .content .grid .grid-thing {
     width: 270px;
+    padding: 1em;
     margin: 1em;
   }
 }
@@ -433,6 +435,7 @@ p {
 .content .instruction {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .content .instruction .slider {
   padding-top: 10px;
@@ -470,7 +473,7 @@ p {
   position: absolute;
   bottom: 0;
   left: 0;
-  z-index: 100;
+  z-index: 1;
   widows: 100%;
   width: 100%;
   padding: 10px;
@@ -532,6 +535,35 @@ p {
 }
 .content .instruction .slider .slide-nav .dots .active-dot {
   color: #acacac;
+}
+.content .instruction .company {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.content .instruction .company .com {
+  width: 40%;
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 2em 0em;
+}
+@media only screen and (max-width: 768px) {
+  .content .instruction .company .com {
+    width: 100%;
+  }
+}
+.content .instruction .company .com .logo {
+  width: 100%;
+}
+.content .instruction .company .com .logo img {
+  width: 10em;
+  background-color: #555555;
+  padding: 1em;
+}
+.content .instruction .company .com p img {
+  width: 10em;
 }
 .content .aspect {
   display: flex;
@@ -613,8 +645,8 @@ p {
   padding: 3em 1em;
 }
 .content .aboutus .personal_info img {
-  width: 10em;
-  height: 10em;
+  width: 15em;
+  height: 15em;
 }
 .content .aboutus .personal_info .info {
   padding: 2em;
@@ -632,6 +664,11 @@ p {
   .content .aboutus .personal_info {
     width: 100%;
   }
+}
+.content .sendsucess {
+  text-align: center;
+  font-size: 2em;
+  padding: 7em 0em;
 }
 .footer {
   background-color: #fd8b8c;
@@ -662,6 +699,12 @@ p {
 .footer .up .contact a,
 .footer .up .partners a {
   text-decoration: none;
+}
+.footer .up .about a img,
+.footer .up .contact a img,
+.footer .up .partners a img {
+  width: 7em;
+  padding: 0.5em;
 }
 .footer .up .about h2,
 .footer .up .contact h2,
