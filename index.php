@@ -15,23 +15,11 @@
     <div class="scrollup">
 
     </div>
-    <div class="mobile-menu">
-        <div class="title">
-          MENU
-        </div>
-        <ul>
-            <li>首頁</li>
-            <li>小角落們</li>
-            <li>匿名發文</li>
-            <li>使用方法</li>
-            <li>角落黑白面</li>
-            <li>關於我們</li>
-        </ul>
-    </div>
-    <div class="veil">
 
-    </div>
     <div class="header">
+      <div class="veil">
+
+      </div>
         <div class="logo">
             <img src="images/logo.png" alt="" />
         </div>
@@ -47,11 +35,23 @@
             <a href="#" class="mobile-menu-button effect">
                 <span class="bar"></span>
             </a>
-
+        </div>
+        <div class="mobile-menu">
+            <div class="title">
+              MENU
+            </div>
+            <ul>
+                <li>首頁</li>
+                <li>小角落們</li>
+                <li>匿名發文</li>
+                <li>使用方法</li>
+                <li>角落黑白面</li>
+                <li>關於我們</li>
+            </ul>
         </div>
     </div>
     <div class="load">
-      NOOK
+      <img src="images/logo_text.png" alt="" />
     </div>
     <div class="content">
 
