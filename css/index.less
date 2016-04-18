@@ -415,6 +415,7 @@ p {
   .instruction {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     .slider {
       padding-top: 10px;
       position: relative;
@@ -518,6 +519,39 @@ p {
         }
       }
     }
+    .company{
+      background-color: @element-bgcolor;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+
+      .com{
+        width: 40%;
+        flex-wrap: wrap;
+        text-align: center;
+        padding: 2em 0em;
+        @media @mobile{
+          width: 100%;
+        }
+        .logo{
+          width: 100%;
+          img{
+            width:10em;
+            background-color: #555555;
+            padding: 1em;
+          }
+        }
+
+        p{
+          img{
+            width: 10em;
+          }
+        }
+      }
+
+    }
   }
   /*aspect.html*/
   .aspect {
@@ -599,8 +633,8 @@ p {
       text-align: center;
       padding: 3em 1em;
       img {
-        width: 10em;
-        height: 10em;
+        width: 15em;
+        height: 15em;
       }
       .info {
         padding: 2em;
