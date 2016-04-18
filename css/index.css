@@ -670,6 +670,18 @@ p {
   font-size: 2em;
   padding: 7em 0em;
 }
+.load {
+  width: 100%;
+  padding: 5em 0em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3em;
+  color: #fd8b8c;
+  background-color: #ececec;
+  position: absolute;
+  z-index: 100;
+}
 .footer {
   background-color: #fd8b8c;
   color: white;
