@@ -140,7 +140,7 @@ p {
   align-items: flex-end;
   width: 100%;
   height: 4em;
-  background-color: #ececec;
+  background-color: rgba(236, 236, 236, 0.7);
   z-index: 50;
   position: fixed;
 }
