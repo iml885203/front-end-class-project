@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=320px; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
     <title>北科小角落</title>
      <link rel="icon" href="images/icon.png" type="image/png" sizes="32x32">
-    <link rel="stylesheet/less" type="text/css" href="css/index.less">
-    <!-- <link rel="stylesheet" type="text/css" href="css/index.css"> -->
+    <!-- <link rel="stylesheet/less" type="text/css" href="css/index.less"> -->
+    <link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 
 <body>
@@ -99,7 +99,7 @@
 </body>
 <script src="js/jquery-1.12.0.min.js"></script>
 <script src="js/masonry.pkgd.min.js"></script>
-<script src="js/less.min.js"></script>
+<!-- <script src="js/less.min.js"></script> -->
 <script src="js/index.js"></script>
 
 
