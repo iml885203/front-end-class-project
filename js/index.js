@@ -76,7 +76,7 @@ $(function() {
             $(this).load('layout/nooks.php', function() {
               ajaxUnbild();
               /*nooks*/
-                $window.scroll();
+
               $('.grid').masonry({
                 itemSelector : '.grid-thing',
                 columnWidth : 10,
@@ -86,7 +86,7 @@ $(function() {
           });
           $('.content').fadeIn(500, function() {
             /*這邊寫換頁動畫*/
-
+            $window.scroll();
           });
           break;
         case '3':
