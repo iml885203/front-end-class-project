@@ -551,7 +551,10 @@ p {
   background-color: #555555;
   padding: 1em;
 }
-.content .instruction .company .com p img {
+.content .instruction .company .com .info {
+  padding: 1em;
+}
+.content .instruction .company .com .info p img {
   width: 10em;
 }
 .content .aspect {
