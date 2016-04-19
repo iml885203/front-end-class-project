@@ -548,8 +548,10 @@ p {
 }
 .content .instruction .company .com .logo img {
   width: 10em;
-  background-color: #0084e8;
   padding: 1em;
+}
+.content .instruction .company .com .logo.hw img {
+  background-color: #0084e8;
 }
 .content .instruction .company .com .info {
   padding: 1em;

@@ -65,10 +65,13 @@
                 <h2>合作廠商</h2>
                 <p>
                     <a href="http://herrangus.github.io/NTUT-Hw-Plus/" target="_blank"><img src="http://herrangus.github.io/NTUT-Hw-Plus/images/logo.png" alt="" /></a>
-
                 </p>
                 <p>
                     <a href="http://zxc22884.github.io/minterm/" target="_blank">NTUT FOOD</a>
+                </p>
+                <p>
+                    <a href="http://workforland.azurewebsites.net/wd/mid/index.php" target="_blank">北科
+                    I美食</a>
                 </p>
             </div>
             <div class="about">
