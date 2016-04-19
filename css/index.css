@@ -6,7 +6,7 @@ body {
   background-color: #ececec;
   position: relative;
   overflow-x: hidden;
-  font-family: Helvetica Neue, Roboto, Arial, sans-serif;
+  font-family: Microsoft JhengHei, Helvetica Neue, Roboto, Arial, sans-serif;
 }
 body .veil {
   display: none;
