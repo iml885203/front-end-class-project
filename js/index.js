@@ -45,7 +45,7 @@ $(function() {
       switch (i) {
         case '1':
           $('.content').fadeOut(0, function() {
-            $(this).load('layout/home.html', function() {
+            $(this).load('layout/home.php', function() {
               ajaxUnbild();
               if ($window.width() < '768') {
                 $('.surface img').attr('src', 'images/surface_backup.png');
