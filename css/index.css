@@ -380,8 +380,7 @@ p {
   width: 100%;
 }
 .content .company .com .logo img {
-  width: 10em;
-  padding: 1em;
+  height: 5em;
 }
 .content .company .com .logo.hw img {
   background-color: #0084e8;

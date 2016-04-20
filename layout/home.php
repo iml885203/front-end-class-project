@@ -123,7 +123,7 @@
       </div>
       <h2>北科Hw+</h2>
       <div class="info">
-
+        <h3>積分兌換</h3>
         <p>
           <img src="images/ticket.png" alt="" />
           <br>即日起，只要1000積分
