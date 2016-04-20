@@ -363,6 +363,47 @@ p {
       }
     }
   }
+  .company{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    .com{
+      width: 30%;
+      flex-wrap: wrap;
+      text-align: center;
+      padding: 2em 0em;
+      @media @mobile{
+        width: 100%;
+      }
+      .logo{
+        width: 100%;
+        img{
+          width:10em;
+
+          padding: 1em;
+        }
+        &.hw{
+          img{
+            background-color: #0084e8;
+          }
+        }
+
+      }
+
+      .info{
+        padding: 1em;
+        p{
+          img{
+            width: 10em;
+          }
+        }
+      }
+    }
+
+  }
   /*nooks.html*/
   .grid {
     margin: 0 auto;
@@ -533,47 +574,7 @@ p {
         }
       }
     }
-    .company{
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
 
-      .com{
-        width: 40%;
-        flex-wrap: wrap;
-        text-align: center;
-        padding: 2em 0em;
-        @media @mobile{
-          width: 100%;
-        }
-        .logo{
-          width: 100%;
-          img{
-            width:10em;
-
-            padding: 1em;
-          }
-          &.hw{
-            img{
-              background-color: #0084e8;
-            }
-          }
-
-        }
-
-        .info{
-          padding: 1em;
-          p{
-            img{
-              width: 10em;
-            }
-          }
-        }
-      }
-
-    }
   }
   /*aspect.html*/
   .aspect {

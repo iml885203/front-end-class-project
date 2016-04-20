@@ -358,6 +358,40 @@ p {
     width: 100%;
   }
 }
+.content .company {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.content .company .com {
+  width: 30%;
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 2em 0em;
+}
+@media only screen and (max-width: 768px) {
+  .content .company .com {
+    width: 100%;
+  }
+}
+.content .company .com .logo {
+  width: 100%;
+}
+.content .company .com .logo img {
+  width: 10em;
+  padding: 1em;
+}
+.content .company .com .logo.hw img {
+  background-color: #0084e8;
+}
+.content .company .com .info {
+  padding: 1em;
+}
+.content .company .com .info p img {
+  width: 10em;
+}
 .content .grid {
   margin: 0 auto;
 }
@@ -524,40 +558,6 @@ p {
 }
 .content .instruction .slider .slide-nav .dots .active-dot {
   color: #acacac;
-}
-.content .instruction .company {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.content .instruction .company .com {
-  width: 40%;
-  flex-wrap: wrap;
-  text-align: center;
-  padding: 2em 0em;
-}
-@media only screen and (max-width: 768px) {
-  .content .instruction .company .com {
-    width: 100%;
-  }
-}
-.content .instruction .company .com .logo {
-  width: 100%;
-}
-.content .instruction .company .com .logo img {
-  width: 10em;
-  padding: 1em;
-}
-.content .instruction .company .com .logo.hw img {
-  background-color: #0084e8;
-}
-.content .instruction .company .com .info {
-  padding: 1em;
-}
-.content .instruction .company .com .info p img {
-  width: 10em;
 }
 .content .aspect {
   display: flex;
