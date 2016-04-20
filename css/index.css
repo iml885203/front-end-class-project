@@ -390,7 +390,7 @@ p {
   padding: 1em;
 }
 .content .company .com .info p img {
-  width: 10em;
+  width: 100%;
 }
 .content .grid {
   margin: 0 auto;
