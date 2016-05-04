@@ -3,7 +3,7 @@ $(function(){
   var $main = $('.main');
   var windowHeight = 0;
   var scrollIndex = 0;
-  var scrollFinsh = 15;
+  var scrollFinsh = 5;
   $window.on('load resize', function(){
     $('body').height(windowHeight = $(this).height());
   });
