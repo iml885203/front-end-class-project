@@ -24,7 +24,7 @@ $(function(){
       if(e.keyCode == 83){ //press S
         console.log("press S");
         $main.children('.view').each(function(){
-          if($(this).hasClass('active')){
+          if($(this).hasClass('active') && $(this).next('.view').length!=0){
             $(this).removeClass('active');
             $(this).next('.view').addClass('active');
             scrollHeight = ($(this).next('.view').index()) * windowHeight;
@@ -35,7 +35,7 @@ $(function(){
       else if(e.keyCode == 87){ //press W
         console.log("press W");
         $main.children('.view').each(function(){
-          if($(this).hasClass('active')){
+          if($(this).hasClass('active') && $(this).prev('.view').length!=0){
             $(this).removeClass('active');
             $(this).prev('.view').addClass('active');
             scrollHeight = ($(this).prev('.view').index()) * windowHeight;
@@ -48,30 +48,31 @@ $(function(){
   });
   $window.on('DOMMouseScroll mousewheel', function(e){
     //$main.is(':animated');
-    console.log(scrollIndex);
-    if(e.originalEvent.detail > 0 || e.originalEvent.wheelDelta < 0) { //alternative options for wheelData: wheelDeltaX & wheelDeltaY
-      //scroll down
-
-      if(!$main.is(':animated')){
-        scrollIndex++;
+    if(!$main.is(':animated')){
+      if(e.originalEvent.detail > 0 || e.originalEvent.wheelDelta < 0) { //alternative options for wheelData: wheelDeltaX & wheelDeltaY
+        //scroll down
+        $main.children('.view').each(function(){
+          if($(this).hasClass('active') && $(this).next('.view').length!=0){
+            $(this).removeClass('active');
+            $(this).next('.view').addClass('active');
+            scrollHeight = ($(this).next('.view').index()) * windowHeight;
+            return false;
+          }
+        });
+      } else {
+        //scroll up
+        $main.children('.view').each(function(){
+          if($(this).hasClass('active') && $(this).prev('.view').length!=0){
+            $(this).removeClass('active');
+            $(this).prev('.view').addClass('active');
+            scrollHeight = ($(this).prev('.view').index()) * windowHeight;
+            return false;
+          }
+        });
       }
-      if(scrollIndex >= scrollFinsh){
-        scrollIndex = 0;
-        $main.animate({scrollTop: $main.scrollTop()+windowHeight});
-      }
-
-    } else {
-      //scroll up
-
-      if(!$main.is(':animated')){
-        scrollIndex++;
-      }
-      if(scrollIndex >= scrollFinsh){
-        scrollIndex = 0;
-        $main.animate({scrollTop: $main.scrollTop()-windowHeight});
-      }
+      //prevent page fom scrolling
+      $main.animate({scrollTop: scrollHeight});
     }
-    //prevent page fom scrolling
     return false;
   });
 })
