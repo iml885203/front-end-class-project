@@ -4,8 +4,11 @@ $(function(){
   var windowHeight = 0;
   var scrollIndex = 0;
   var scrollFinsh = 5;
+  $main.children('selector')
+
   $window.on('load resize', function(){
     $('body').height(windowHeight = $(this).height());
+
   });
   $window.on('pageshow', function(){
     $main.animate({scrollTop: 0});
@@ -13,12 +16,16 @@ $(function(){
   $window.on('keyup', function(e){
     if(e.keyCode == 83){ //press S
       console.log("press S");
-      $main.animate({scrollTop: $main.scrollTop()+windowHeight});
+      if(!$main.is(':animated')){
+        $main.animate({scrollTop: $main.scrollTop()+windowHeight});
+      }
 
     }
     else if(e.keyCode == 87){ //press W
       console.log("press W");
-      $main.animate({scrollTop: $main.scrollTop()-windowHeight});
+      if(!$main.is(':animated')){
+        $main.animate({scrollTop: $main.scrollTop()-windowHeight});
+      }
     }
   });
   $window.on('DOMMouseScroll mousewheel', function(e){
