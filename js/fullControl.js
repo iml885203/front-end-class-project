@@ -5,20 +5,18 @@ $(function(){
   var scrollHeight = 0;
   var scrollIndex = 0;
   var scrollFinsh = 5;
-  $main.children('view').each(function(){
-    console.log("123");
-    if($(this).hasClass('active')){
-      scrollHeight = ($(this).index() + 1) * windowHeight;
-    }
-  });
 
   $window.on('load resize', function(){
     $('body').height(windowHeight = $(this).height());
-
+    $main.children('.view').each(function(){
+      if($(this).hasClass('active')){
+        scrollHeight = ($(this).index()) * windowHeight;
+        return false;
+      }
+    });
+    $main.scrollTop(scrollHeight);
   });
-  $window.on('pageshow', function(){
-    $main.animate({scrollTop: 0});
-  })
+
   $window.on('keyup', function(e){
     if(!$main.is(':animated')){
       if(e.keyCode == 83){ //press S
@@ -43,7 +41,7 @@ $(function(){
           }
         });
       }
-      $main.animate({scrollTop: scrollHeight});
+      $main.animate({scrollTop: scrollHeight}, 'slow');
     }
   });
   $window.on('DOMMouseScroll mousewheel', function(e){
@@ -71,7 +69,7 @@ $(function(){
         });
       }
       //prevent page fom scrolling
-      $main.animate({scrollTop: scrollHeight});
+      $main.animate({scrollTop: scrollHeight}, 'slow');
     }
     return false;
   });
